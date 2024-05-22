@@ -13,10 +13,8 @@ SELECT * FROM matches WHERE season = 2017;
 
 ```sql
 <!-- Copy solution here -->
--- can this be written in a single line?
-SELECT * FROM matches WHERE awayteam = 'Barcelona';
-SELECT * FROM matches WHERE hometeam = 'Barcelona';
 
+SELECT * FROM matches WHERE awayteam = 'Barcelona' OR hometeam = 'Barcelona';
 
 ```
 
@@ -24,7 +22,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona';
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT * FROM divisions WHERE country = 'Scotland';
 
 ```
 
@@ -33,6 +31,8 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona';
 ```sql
 <!-- Copy solution here -->
 
+SELECT * FROM divisions WHERE name = 'Bundesliga';
+SELECT COUNT(*) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg')
 
 ```
 
@@ -40,7 +40,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona';
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT DISTINCT awayteam FROM matches WHERE awayteam LIKE '%City';
 
 ```
 
@@ -48,7 +48,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona';
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT * FROM divisions WHERE country = 'France';
 
 ```
 
@@ -57,6 +57,7 @@ SELECT * FROM matches WHERE hometeam = 'Barcelona';
 ```sql
 <!-- Copy solution here -->
 
+SELECT * FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea') OR (hometeam = 'Swansea' AND awayteam = 'Huddersfield');
 
 ```
 
