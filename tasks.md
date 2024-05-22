@@ -65,6 +65,8 @@ SELECT * FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea')
 
 ```sql
 <!-- Copy solution here -->
+SELECT * FROM divisions WHERE name LIKE 'Eredivisie';
+SELECT * FROM matches WHERE division_code = 'N1' AND ftr = 'D' AND season BETWEEN 2010 AND 2015
 
 
 ```
@@ -75,6 +77,17 @@ SELECT * FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea')
 <!-- Copy solution here -->
 
 
+-- find PL code in divisions
+-- use code in PL to find matches 
+-- adding the goals
+-- create a column,research how to rename (AS)
+-- DESC needs to be used
+-- the one with more home goals come before in the order when the total is the same (HELP??)
+-- attempt to put in one line
+
+SELECT * FROM divisions WHERE name LIKE 'Premier League';
+SELECT division_code, fthg, ftag, (fthg + ftag) AS total FROM matches WHERE division_code = 'E0' ORDER BY total DESC
+
 ```
 
 10) Find the name of the division in which the most goals were scored in a single season and the year in which it happened.
@@ -82,6 +95,10 @@ SELECT * FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea')
 ```sql
 <!-- Copy solution here -->
 
+-- for the year
+SELECT division_code, season, (ftag + fthg) AS total FROM matches ORDER BY total DESC;
+-- for the name of the division
+SELECT name FROM divisions WHERE code = 'N1'
 
 ```
 
