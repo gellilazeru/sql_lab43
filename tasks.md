@@ -6,14 +6,16 @@ Each of the questions/tasks below can be answered using a `SELECT` query. When y
 
 ```sql
 <!-- Copy solution here -->
-
-
+SELECT * FROM matches WHERE season = 2017;
 ```
 
 2) Find all the matches featuring Barcelona.
 
 ```sql
 <!-- Copy solution here -->
+-- can this be written in a single line?
+SELECT * FROM matches WHERE awayteam = 'Barcelona';
+SELECT * FROM matches WHERE hometeam = 'Barcelona';
 
 
 ```
